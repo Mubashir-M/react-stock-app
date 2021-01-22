@@ -60,6 +60,17 @@ const PickedStock =  ({
             <p id = 'info'><strong>Exchange: </strong>{stockInfo.exchange}</p>
           </div>
           <div>
+            <p id = 'info'><strong>Sector: </strong>{stockInfo.sector}</p>
+          </div>
+          <div>
+            <p id = 'info'><strong>Security Name: </strong>{stockInfo.securityName}</p>
+          </div>
+          <div>
+            <p id = 'info'><strong>State: </strong>{stockInfo.state}</p>
+          </div>
+        </section>
+        <section className='section2'>
+          <div>
             <p id = 'info'><strong>Date: </strong>{stockData.date}</p>
           </div>
           <div>
@@ -74,12 +85,11 @@ const PickedStock =  ({
           <div>
             <p id = 'info'><strong>Average: </strong>{stockData.average}</p>
           </div>
-        </section>
-        <div className = 'buttons'>
-        <button onClick = {handleCancel}>Cancel</button>
-        <button>Save</button>
+          <div className = 'buttons'>
+            <button onClick = {handleCancel}>Cancel</button>
+            <button>Save</button>
         </div>
-  
+        </section>
     </div>
   )
 }
