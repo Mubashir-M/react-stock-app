@@ -7,7 +7,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is a stock picker that allows to search for stocks using Iexcloud api.
+This project is a stockpicker that allows to search for stocks using Iexcloud api.
 	
 ## Technologies
 Project is created with:
