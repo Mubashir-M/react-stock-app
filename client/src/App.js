@@ -41,7 +41,7 @@ const  App = () =>  {
     <div className = 'window_div'>
       <h1>Stock Picker</h1>
       <div className = 'data_div'>
-        { chosenStock === null ? <input value = {newSearch} onChange = { e => SetNewSearch(e.target.value)}/> : null}
+        { chosenStock === null ? <form><input value = {newSearch} onChange = { e => SetNewSearch(e.target.value)}/></form> : null}
         {
         chosenStock === null ? <Stocks/> : 
           <PickedStock
