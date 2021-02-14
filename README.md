@@ -1,4 +1,4 @@
-# react-stock-app
+# stock-search app
 
 ## Table of contents
 * [General info](#general-info)
