@@ -3,7 +3,7 @@ import './PickedStock.css'
 
 const PickedStock =  ({
   chosenStock,stockData, stockInfo,logo,
-  SetLogo,SetStockData,SetStockInfo, handleCancel 
+  SetLogo,SetStockData,SetStockInfo, handleCancel, handleSaveStock
 }) => {
   // get balance sheet, logo, company, price using IEXcloud.io
   //
@@ -42,7 +42,7 @@ const PickedStock =  ({
 
   },[SetStockData, SetStockInfo, stockData.length, urlData, urlInfo,urlLogo,SetLogo])
     
-
+  
   return (
     <div className = 'container'>
         <section className = 'section1'>
@@ -87,7 +87,7 @@ const PickedStock =  ({
           </div>
           <div className = 'buttons'>
             <button onClick = {handleCancel}>Cancel</button>
-            <button>Save</button>
+            <button value = {chosenStock} onClick={handleSaveStock}>Save</button>
         </div>
         </section>
     </div>

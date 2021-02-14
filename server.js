@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require ('body-parser');
+const cors = require('cors')
 
 const items = require('./routes/api/items')
 
@@ -9,6 +10,7 @@ const app = express();
 // Bodyparser Middlware
 
 app.use(bodyParser.json())
+app.use(cors())
 
 // mongo uri
 const db = require('./config/config').MONGODB_URI
