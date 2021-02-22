@@ -16,25 +16,26 @@ const PickedStock =  ({
   useEffect(() => {
 
     if (stockData.length === 0) {
+      // fetching company's stock price
       fetch(urlData)
       .then((reponse) => reponse.json())
       .then((data)=> {
-        console.log('here is data: ',data[0])
+       console.log('here is data: ',data)
         SetStockData(data[0])
       })
-
+      // fetching data about the compmany
       fetch(urlInfo)
       .then((response) => response.json())
       .then((data) => {
-        console.log('here is company data: ',data)
+      //  console.log('here is company data: ',data)
         SetStockInfo(data)
       })
     }
-
+    // fetching logo of the company
     fetch(urlLogo)
     .then((reponse) => reponse.json())
     .then((data) => {
-      console.log('here is logo:',data)
+     // console.log('here is logo:',data)
       SetLogo(data)
 
     })

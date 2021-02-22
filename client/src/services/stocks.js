@@ -12,8 +12,8 @@ const create = async newStock => {
   return reponse.data
 }
 
-const remove = async stock => {
-  const response = await axios.delete(`${baseUrl}/${stock.id}`)
+const remove = async id => {
+  const response = await axios.delete(`${baseUrl}/${id}`)
   return response.data
 }
 const stockService = { getAll , create, remove}

@@ -3,6 +3,7 @@ import stock_symbol from './components/Data'
 import Stock from './components/Stock'
 import PickedStock from './components/PickedStock'
 import stockService from './services/stocks'
+import Searchbar from './components/Searchbar'
 import './App.css'
 
 
@@ -14,9 +15,11 @@ const  App = () =>  {
   const [newSearch, SetNewSearch] = useState('')
   const [chosenStock, SetChosenStock] = useState (null)
  
+
   useEffect(() => {
     stockService.getAll().then (stocks => SetSavedStocks(stocks))
   },[])
+  
 
   const handleStockPick = (event) => {
     event.preventDefault()
@@ -35,16 +38,14 @@ const  App = () =>  {
       SetStockInfo([])
   }
 
-  const handleSaveStock = (event) => {
+  const handleSaveStock =  (event) => {
+    // saving the stock wont re render the screen.
     event.preventDefault()
     const result = stock_symbol.filter(stock => stock.toLocaleLowerCase().includes(event.target.value.toLocaleLowerCase()))[0]
-    console.log('here is stock found:' , result)
     const name = result.split(',')[0]
     const symbol = result.split(',')[1]
-    console.log('here is stock name:' , name)
 
     if (savedStocks.filter(stock => stock.symbol===symbol).length===0){
-      console.log('heihei')
       const newStock = {
         name: name,
         symbol: symbol
@@ -53,47 +54,68 @@ const  App = () =>  {
       stockService
       .create(newStock)
       .then (returnedStock => {
-        console.log('saved stock: ', returnedStock)
         SetNewSearch('')
+        SetChosenStock(null)
+        SetStockData([])
+        SetStockInfo([])
       })
     } else {
       console.log('stock already saved')
     }
   }
+
+  const handleRemoveStock = (event) => {
+    const stock_id = event.target.value
+
+    stockService
+    .remove(stock_id)
+    .then (() => {
+      console.log('Deleted chosen stock')
+        SetSavedStocks(savedStocks.filter(stock => stock._id !== stock_id))
+    })
+    
+  }
  
-  const Stocks = () => {
+  const FilteredStocks = () => {
     const result = stock_symbol.filter(stock => stock.toLocaleLowerCase().includes(newSearch.toLocaleLowerCase()))
     
     if (result.length > 15 ) {
       return (
-        <div>
-          <div>
+        <div className= 'filteredStocks_div'>
+          <div >
             <p>Too many matching results.</p>
           </div>
           <div>
             <h2>Saved Stocks</h2>
-            {savedStocks.map(stock => <p key = {stock._id}>name: {stock.name} symbol: {stock.symbol} <button value = {stock.symbol} onClick={handleGetSavedStock}>Get</button></p>)}
+            {savedStocks.map(stock => <p key = {stock._id}>name: {stock.name} symbol: {stock.symbol} <button value = {stock.symbol} onClick={handleGetSavedStock}>Get</button>
+              <button value = {stock._id} onClick={handleRemoveStock}>Remove</button>
+            </p>)}
           </div>
         </div>
       )
     } 
     return (
-      <div>
+      <div className= 'filteredStocks_div'> 
         <div>
         {result.map(stock => <Stock key = {stock} stock = {stock} handleStockPick = {handleStockPick}/>)}
         </div>
+        <div>
+            <h2>Saved Stocks</h2>
+            {savedStocks.map(stock => <p key = {stock._id}>name: {stock.name} symbol: {stock.symbol} <button value = {stock.symbol} onClick={handleGetSavedStock}>Get</button>
+              <button value = {stock._id} onClick={handleRemoveStock}>Remove</button>
+            </p>)}
+          </div>
       </div>
     )
 }
  
 
   return (
-    <div className = 'window_div'>
-      <h1>Stock Picker</h1>
-      <div className = 'data_div'>
-        { chosenStock === null ? <form><input value = {newSearch} onChange = { e => SetNewSearch(e.target.value)}/></form> : null}
+    <div className = 'container_div'>
+      <Searchbar chosenStock= {chosenStock} newSearch= {newSearch} SetNewSearch = {SetNewSearch}/>
+      <div>
         {
-        chosenStock === null ? <Stocks/> : 
+        chosenStock === null ? <FilteredStocks/> : 
           <PickedStock
             chosenStock={chosenStock} stockData={stockData} stockInfo={stockInfo} logo = {logo}
             SetLogo= {SetLogo} SetStockData={SetStockData} SetStockInfo={SetStockInfo} handleCancel={handleCancel}
