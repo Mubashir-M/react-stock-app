@@ -30,13 +30,13 @@ const  App = () =>  {
   const handleGetSavedStock = (event) => {
     event.preventDefault()
     SetChosenStock(event.target.value)
+    SetDisplayType('Chosen')
   }
 
   const handleCancel = (event) => {
     event.preventDefault()
       SetDisplayType('Search')
       console.log('here is display type:',displayType)
-      SetChosenStock(null)
       SetStockData([])
       SetStockInfo([])
   }
@@ -58,9 +58,10 @@ const  App = () =>  {
       .create(newStock)
       .then (returnedStock => {
         SetNewSearch('')
-        SetChosenStock(null)
         SetStockData([])
         SetStockInfo([])
+        SetSavedStocks([...savedStocks, returnedStock])
+        SetDisplayType('Search')
       })
     } else {
       console.log('stock already saved')

@@ -43,51 +43,68 @@ const PickedStock =  ({
   
   return (
     <div className = 'container'>
-        <section className = 'section1'>
-          <img src = {logo.url} alt ='Company Logo'/>
-          <div className='info'>
-            <p ><strong>Company Name: </strong>{stockInfo.companyName}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Stock: </strong>{stockInfo.symbol}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Description: </strong>{stockInfo.description}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Exchange: </strong>{stockInfo.exchange}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Sector: </strong>{stockInfo.sector}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Security Name: </strong>{stockInfo.securityName}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>State: </strong>{stockInfo.state}</p>
-          </div>
-        </section>
-        <section className='section2'>
-          <div className='info'>
-            <p ><strong>Date: </strong>{stockData.date}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Close: </strong>{stockData.close}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>High: </strong>{stockData.high}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Low: </strong>{stockData.low}</p>
-          </div>
-          <div className='info'>
-            <p ><strong>Average: </strong>{stockData.average}</p>
-          </div>
-          <div className = 'buttons'>
+      <div>
+      <img src = {logo.url} alt ='Company Logo'/>
+      </div>
+
+      <div>
+        <table>
+          <tbody>
+        <tr>
+          <th><strong>Company Name: </strong></th>
+          <td>{stockInfo.companyName}</td>
+        </tr>
+        <tr>
+          <th><strong>Stock: </strong></th>
+          <td>{stockInfo.symbol}</td>
+        </tr>
+        <tr>
+          <th><strong>Description: </strong></th>
+          <td>{stockInfo.description}</td>
+        </tr>
+        <tr>
+          <th><strong>Exchange: </strong></th>
+          <td>{stockInfo.exchange}</td>
+        </tr>
+        <tr>
+          <th><strong>Sector: </strong></th>
+          <td>{stockInfo.sector}</td>
+        </tr>
+        <tr>
+          <th><strong>Security Name: </strong></th>
+          <td>{stockInfo.securityName}</td>
+        </tr>
+        <tr>
+          <th><strong>State: </strong></th>
+          <td>{stockInfo.state}</td>
+        </tr>
+        <tr>
+          <th><strong>Date: </strong></th>
+          <td>{stockData.date}</td>
+        </tr>
+        <tr>
+          <th><strong>Close: </strong></th>
+          <td>{stockData.close}</td>
+        </tr>
+        <tr>
+          <th><strong>High: </strong></th>
+          <td>{stockData.high}</td>
+        </tr>
+        <tr>
+          <th><strong>Low: </strong></th>
+          <td>{stockData.low}</td>
+        </tr>
+        <tr>
+          <th><strong>Average: </strong></th>
+          <td>{stockData.average}</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+      <div className = 'buttons'>
             <button onClick = {handleCancel}>Cancel</button>
             <button value = {chosenStock} onClick={handleSaveStock}>Save</button>
-        </div>
-        </section>
+        </div>  
     </div>
   )
 }

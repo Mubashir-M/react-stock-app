@@ -1,4 +1,4 @@
-.container {
+/*.container {
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -69,4 +69,41 @@ button:hover {
   border: solid black;
   border-width: 1px;
 }
+*/
 
+img {
+  margin-left: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ th, td {
+  border: solid black;
+}
+
+th,td {
+  border-width: 1px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30vw;
+}
+
+button {
+  padding: 5px 30px 5px 30px;
+  border-radius: 15px;
+}
+
+.buttons :hover {
+  background-color: rgb(110, 107, 107);
+  color: white;
+  border: solid black;
+  border-width: 1px;
+}
