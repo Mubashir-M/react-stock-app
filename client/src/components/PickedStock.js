@@ -13,78 +13,75 @@ const PickedStock =  ({
   const urlInfo = `https://cloud.iexapis.com/stable/stock/${symbol}/company?token=${api_key}`
   const urlLogo = `https://cloud.iexapis.com/stable/stock/${symbol}/logo?token=${api_key}`
   
+  
+  
   useEffect(() => {
-
-    if (stockData.length === 0) {
+    console.log('here again')
+    console.log('here is stockdata before:', stockData.length === 0)
       // fetching company's stock price
-      fetch(urlData)
-      .then((reponse) => reponse.json())
-      .then((data)=> {
-       console.log('here is data: ',data)
-        SetStockData(data[0])
-      })
-      // fetching data about the compmany
-      fetch(urlInfo)
-      .then((response) => response.json())
-      .then((data) => {
-      //  console.log('here is company data: ',data)
-        SetStockInfo(data)
-      })
-    }
-    // fetching logo of the company
-    fetch(urlLogo)
-    .then((reponse) => reponse.json())
-    .then((data) => {
-     // console.log('here is logo:',data)
-      SetLogo(data)
+      const getStock = async () => {
+        if (stockData.length === 0){
+          let response = await fetch(urlData)
+          response = await response.json()
+          console.log('here is response:', response)
+          SetStockData(response[0])
 
-    })
-    
-
-  },[SetStockData, SetStockInfo, stockData.length, urlData, urlInfo,urlLogo,SetLogo])
+          // info
+          response = await fetch(urlInfo)
+          response = await response.json()
+          SetStockInfo(response)
+          // fetching logo of the company
+          response = await fetch(urlLogo)
+          response = await response.json()
+          SetLogo(response)
+        }
+      }
+    getStock()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
     
   
   return (
     <div className = 'container'>
         <section className = 'section1'>
           <img src = {logo.url} alt ='Company Logo'/>
-          <div>
-            <p id = 'info'><strong>Company Name: </strong>{stockInfo.companyName}</p>
+          <div className='info'>
+            <p ><strong>Company Name: </strong>{stockInfo.companyName}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Stock: </strong>{stockInfo.symbol}</p>
+          <div className='info'>
+            <p ><strong>Stock: </strong>{stockInfo.symbol}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Description: </strong>{stockInfo.description}</p>
+          <div className='info'>
+            <p ><strong>Description: </strong>{stockInfo.description}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Exchange: </strong>{stockInfo.exchange}</p>
+          <div className='info'>
+            <p ><strong>Exchange: </strong>{stockInfo.exchange}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Sector: </strong>{stockInfo.sector}</p>
+          <div className='info'>
+            <p ><strong>Sector: </strong>{stockInfo.sector}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Security Name: </strong>{stockInfo.securityName}</p>
+          <div className='info'>
+            <p ><strong>Security Name: </strong>{stockInfo.securityName}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>State: </strong>{stockInfo.state}</p>
+          <div className='info'>
+            <p ><strong>State: </strong>{stockInfo.state}</p>
           </div>
         </section>
         <section className='section2'>
-          <div>
-            <p id = 'info'><strong>Date: </strong>{stockData.date}</p>
+          <div className='info'>
+            <p ><strong>Date: </strong>{stockData.date}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Close: </strong>{stockData.close}</p>
+          <div className='info'>
+            <p ><strong>Close: </strong>{stockData.close}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>High: </strong>{stockData.high}</p>
+          <div className='info'>
+            <p ><strong>High: </strong>{stockData.high}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Low: </strong>{stockData.low}</p>
+          <div className='info'>
+            <p ><strong>Low: </strong>{stockData.low}</p>
           </div>
-          <div>
-            <p id = 'info'><strong>Average: </strong>{stockData.average}</p>
+          <div className='info'>
+            <p ><strong>Average: </strong>{stockData.average}</p>
           </div>
           <div className = 'buttons'>
             <button onClick = {handleCancel}>Cancel</button>

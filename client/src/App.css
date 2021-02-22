@@ -1,11 +1,53 @@
 
+* {
+  margin: 0;
+}
+
 .container_div{
-  background-color: rgb(160,160,160);
+ background-color:white;
   height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.result {
+  
+  border-width: 1px;
+  border-radius: 3px;
+  background-color: white;
+  width:80vw;
+  margin-top: 5vh;
+  text-align: center;
+ 
+  
+}
 
+.search_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid white;
+  margin-top: 15vh;
+  
+}
+.input_field {
+  padding: 9px;
+  font-size: 15px;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  text-align: center;
+}
+
+.getsaved_button {
+  margin-left: 8px;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  align-items: center;
+  justify-content: center;
+}
