@@ -61,9 +61,10 @@ const  App = () =>  {
         SetStockData([])
         SetStockInfo([])
         SetSavedStocks([...savedStocks, returnedStock])
-        SetDisplayType('Search')
+        SetDisplayType('Saved')
       })
     } else {
+      SetDisplayType('Saved')
       console.log('stock already saved')
     }
   }
@@ -93,16 +94,16 @@ const  App = () =>  {
       )
     } 
     return (
-      <div> 
-        <ul>
-          {result.map(stock => 
-            <li key={stock} className = 'searchResult_div'>
-           
-                {stock}
-              <button onClick = {handleStockPick} value = {stock} >Get</button>
-            
-            </li>)}
-          </ul>    
+      <div className = 'app_filtered'> 
+        <table className = 'app_table'>
+          <tbody className = 'app_tbody'>
+            {result.map(stock => 
+              <tr>
+               <th className = 'app_th' key = {stock}>{stock} <button onClick = {handleStockPick} value = {stock} >Get</button></th>
+               </tr>
+              )}
+            </tbody>
+        </table>
       </div>
     )
 }

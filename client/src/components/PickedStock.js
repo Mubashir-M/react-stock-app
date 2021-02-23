@@ -39,64 +39,68 @@ const PickedStock =  ({
     getStock()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-    
-  
+   
+  /*
+  className ='tr'
+  className ='td'
+  className ='th'
+  */
   return (
     <div className = 'container'>
       <div>
       <img src = {logo.url} alt ='Company Logo'/>
       </div>
 
-      <div>
-        <table>
+      <div className = 'body-table'>
+        <table className = 'content-table'>
           <tbody>
-        <tr>
-          <th><strong>Company Name: </strong></th>
-          <td>{stockInfo.companyName}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Company Name: </strong></th>
+          <td className ='td'>{stockInfo.companyName}</td>
         </tr>
-        <tr>
-          <th><strong>Stock: </strong></th>
-          <td>{stockInfo.symbol}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Stock: </strong></th>
+          <td className ='td'>{stockInfo.symbol}</td>
         </tr>
-        <tr>
-          <th><strong>Description: </strong></th>
-          <td>{stockInfo.description}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Description: </strong></th>
+          <td className ='td'>{stockInfo.description}</td>
         </tr>
-        <tr>
-          <th><strong>Exchange: </strong></th>
-          <td>{stockInfo.exchange}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Exchange: </strong></th>
+          <td className ='td'>{stockInfo.exchange}</td>
         </tr>
-        <tr>
-          <th><strong>Sector: </strong></th>
-          <td>{stockInfo.sector}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Sector: </strong></th>
+          <td className ='td'>{stockInfo.sector}</td>
         </tr>
-        <tr>
-          <th><strong>Security Name: </strong></th>
-          <td>{stockInfo.securityName}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Security Name: </strong></th>
+          <td className ='td'>{stockInfo.securityName}</td>
         </tr>
-        <tr>
-          <th><strong>State: </strong></th>
-          <td>{stockInfo.state}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>State: </strong></th>
+          <td className ='td'>{stockInfo.state}</td>
         </tr>
-        <tr>
+        <tr className ='tr'>
           <th><strong>Date: </strong></th>
-          <td>{stockData.date}</td>
+          <td className ='td'>{stockData.date}</td>
         </tr>
-        <tr>
-          <th><strong>Close: </strong></th>
-          <td>{stockData.close}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Close: </strong></th>
+          <td className ='td'>{stockData.close}</td>
         </tr>
-        <tr>
-          <th><strong>High: </strong></th>
-          <td>{stockData.high}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>High: </strong></th>
+          <td className ='td'>{stockData.high}</td>
         </tr>
-        <tr>
-          <th><strong>Low: </strong></th>
-          <td>{stockData.low}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Low: </strong></th>
+          <td className ='td'>{stockData.low}</td>
         </tr>
-        <tr>
-          <th><strong>Average: </strong></th>
-          <td>{stockData.average}</td>
+        <tr className ='tr'>
+          <th className ='th'><strong>Average: </strong></th>
+          <td className ='td'>{stockData.average}</td>
         </tr>
         </tbody>
         </table>
