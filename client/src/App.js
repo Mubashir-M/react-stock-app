@@ -111,11 +111,17 @@ const  App = () =>  {
   const SavedStocks = () => {
     return (
       <div>
+   
             <h1>Saved Stocks</h1>
-            {savedStocks.map(stock => <p key = {stock._id}>name: {stock.name} symbol: {stock.symbol} <button value = {stock.symbol} onClick={handleGetSavedStock}>Get</button>
-              <button value = {stock._id} onClick={handleRemoveStock}>Remove</button>
-            </p>)}
+            <table className='saved-table'>
+              <tbody className='saved-tbody'>
+              {savedStocks.map(stock => <th className='saved-th' key = {stock._id}><strong>name: </strong> {stock.name} <strong>symbol:</strong> {stock.symbol} <button value = {stock.symbol} onClick={handleGetSavedStock}>Get</button>
+                <button value = {stock._id} onClick={handleRemoveStock}>Remove</button>
+              </th>)}
+              </tbody>
+            </table>
             <button onClick= {() => SetDisplayType('Search')}>Cancel</button>
+              
           </div>
     )
   }

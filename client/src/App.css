@@ -1,6 +1,7 @@
 
 * {
   margin: 0;
+  font-family: sans-serif;
 }
 
 .container_div{
@@ -67,3 +68,27 @@
   padding-top: 10px;
 }
 
+.saved-table {
+  margin-top: 5vh;
+  border-collapse: collapse;
+  border-top: 2px double #a1a1a1;
+  
+}
+.saved-tbody{
+  display: flex;
+  flex-direction: column;
+  margin-top: 3vh;
+  align-items: center;
+  
+
+}
+.saved-th {
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #a1a1a1;
+  font-weight: normal;
+  font-size: 15px;
+  
+}
