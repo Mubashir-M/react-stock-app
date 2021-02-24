@@ -1,4 +1,5 @@
 import React, { useState, useEffect  } from 'react';
+import { FiSearch } from 'react-icons/fi'
 import stock_symbol from './components/Data'
 import PickedStock from './components/PickedStock'
 import stockService from './services/stocks'
@@ -25,6 +26,7 @@ const  App = () =>  {
     event.preventDefault()
     SetDisplayType('Chosen')
     SetChosenStock(event.target.value.split(',')[1])
+    SetNewSearch('')
   }
 
   const handleGetSavedStock = (event) => {
@@ -86,20 +88,18 @@ const  App = () =>  {
     
     if (result.length > 15 ) {
       return (
-        <div className= 'emptyResult_div'>
-          <div >
-            <p>Too many matching results.</p>
-          </div>
+        <div>
+            <p className = 'filtered-empty-p'>Too many matching results.</p>
         </div>
       )
     } 
     return (
-      <div className = 'app_filtered'> 
-        <table className = 'app_table'>
-          <tbody className = 'app_tbody'>
+      <div className = 'app-filtered'> 
+        <table className = 'app-filtered-table'>
+          <tbody className = 'app-filtered-table-tbody'>
             {result.map(stock => 
               <tr>
-               <th className = 'app_th' key = {stock}>{stock} <button onClick = {handleStockPick} value = {stock} >Get</button></th>
+               <th className = 'app-filtered-table-th' key = {stock}>{stock} <button className='app-filtered-table-button' onClick = {handleStockPick} value = {stock} >Get</button></th>
                </tr>
               )}
             </tbody>
@@ -110,19 +110,29 @@ const  App = () =>  {
 
   const SavedStocks = () => {
     return (
-      <div>
-   
-            <h1>Saved Stocks</h1>
-            <table className='saved-table'>
-              <tbody className='saved-tbody'>
-              {savedStocks.map(stock => <th className='saved-th' key = {stock._id}><strong>name: </strong> {stock.name} <strong>symbol:</strong> {stock.symbol} <button value = {stock.symbol} onClick={handleGetSavedStock}>Get</button>
-                <button value = {stock._id} onClick={handleRemoveStock}>Remove</button>
-              </th>)}
-              </tbody>
-            </table>
-            <button onClick= {() => SetDisplayType('Search')}>Cancel</button>
+      <div className = 'saved-div'>
+        
+        <h1 className= 'saved-h1'>Saved Stocks</h1>
+        <table className='saved-table'>
+          <tbody className='saved-tbody'>
+            {savedStocks.map(stock => 
+            <div className = 'saved-table-div'>
+              <tr className = 'saved-tr'>
+                <th className='saved-th' key = {stock._id}> 
+                  Company:  {stock.name} Symbol: {stock.symbol} 
+                </th>
+              </tr>
+              <tr className = 'saved-tr-buttons'>
+                  <button className = 'saved-tr-button' value = {stock.symbol} onClick={handleGetSavedStock}>Get</button>
+                  <button  className = 'saved-tr-button' value = {stock._id} onClick={handleRemoveStock}>Remove</button>
+              </tr>
+            </div>
+            )}
+          </tbody>
+        </table>
+        <button id ='saved-cancelButton' onClick= {() => SetDisplayType('Search')}>Cancel</button>
               
-          </div>
+      </div>
     )
   }
 
@@ -146,17 +156,23 @@ const  App = () =>  {
 
   return (
     
-    <div className = 'container_div'>
-      
-      {displayType !== 'Search' ? null :
-        <div className = 'search_div'>
-        <form >
-          <input className = 'input_field' placeholder ='Search for a stock' value = {newSearch} onChange = { e => SetNewSearch(e.target.value)}/>
-        </form> 
-        <button className='getsaved_button' onClick={() => SetDisplayType('Saved')}>get saved</button>
-      </div> 
-      }
+    <div className = 'container-div'>
+      { displayType !== 'Search' ? null :
         
+       <div className='search-elements'>
+          <div className = 'search-div'>
+            <div className = 'search-box'>
+              <input className = 'search-text' placeholder ='Type to search for a stock' value = {newSearch} onChange = { e => SetNewSearch(e.target.value)}/>
+              <FiSearch className='search-icon'/>
+            </div> 
+          </div>
+          <div className = 'button-div'>
+            <button className='getsaved_button' onClick={() => SetDisplayType('Saved')}>get saved</button>
+          </div>
+        </div>
+
+      }
+
       <div className='result'>
         <Display/> 
       </div>

@@ -47,60 +47,59 @@ const PickedStock =  ({
   */
   return (
     <div className = 'container'>
-      <div>
-      <img src = {logo.url} alt ='Company Logo'/>
-      </div>
-
-      <div className = 'body-table'>
+      <div className = 'table-div'>
+        <div className='img-div'>
+        <img className='img-item' src = {logo.url} alt ='Company Logo'/>
+        </div>
         <table className = 'content-table'>
           <tbody>
         <tr className ='tr'>
-          <th className ='th'><strong>Company Name: </strong></th>
-          <td className ='td'>{stockInfo.companyName}</td>
+          <th className ='th' id = 'th-first'>Company Name: </th>
+          <td className ='td' id = 'td-first'>{stockInfo.companyName}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Stock: </strong></th>
+          <th className ='th'>Stock: </th>
           <td className ='td'>{stockInfo.symbol}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Description: </strong></th>
+          <th className ='th'>Description: </th>
           <td className ='td'>{stockInfo.description}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Exchange: </strong></th>
+          <th className ='th'>Exchange: </th>
           <td className ='td'>{stockInfo.exchange}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Sector: </strong></th>
+          <th className ='th'>Sector: </th>
           <td className ='td'>{stockInfo.sector}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Security Name: </strong></th>
+          <th className ='th'>Security Name: </th>
           <td className ='td'>{stockInfo.securityName}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>State: </strong></th>
+          <th className ='th'>State: </th>
           <td className ='td'>{stockInfo.state}</td>
         </tr>
         <tr className ='tr'>
-          <th><strong>Date: </strong></th>
+          <th className ='th'>Date: </th>
           <td className ='td'>{stockData.date}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Close: </strong></th>
+          <th className ='th'>Close: </th>
           <td className ='td'>{stockData.close}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>High: </strong></th>
+          <th className ='th'>High: </th>
           <td className ='td'>{stockData.high}</td>
         </tr>
         <tr className ='tr'>
-          <th className ='th'><strong>Low: </strong></th>
+          <th className ='th'>Low: </th>
           <td className ='td'>{stockData.low}</td>
         </tr>
-        <tr className ='tr'>
-          <th className ='th'><strong>Average: </strong></th>
-          <td className ='td'>{stockData.average}</td>
+        <tr className ='tr' id = 'tr-last'>
+          <th className ='th' id= 'th-last'>Average: </th>
+          <td className ='td' id = 'td-last'>{stockData.average}</td>
         </tr>
         </tbody>
         </table>

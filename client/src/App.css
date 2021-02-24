@@ -2,93 +2,225 @@
 * {
   margin: 0;
   font-family: sans-serif;
+  background: #e84118;
 }
 
-.container_div{
-
-  height: 100vh;
-  background-repeat: no-repeat;
+.container-div{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.result {
-  
-  border-width: 1px;
-  border-radius: 3px;
-  background-color: white ;
-  width:80vw;
-  margin-top: 5vh;
-  text-align: center;
+.search-elements {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30vh;
+  padding: 10px;
+  border-radius: 40px;
+}
+
+.search-div {
+  background-color: #2f3640;
+  padding: 10px;
+  border-radius: 40px;
+  align-items: center;
+}
+
+.button-div {
+  background-color: #2f3640;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 40px;
+}
+
+.search-box {
+  background-color: #2f3640;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
  
   
 }
 
-.search_div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 15vh;
-  
+.search-icon {
+  border: 2px solid #e84118;
+  padding:5px;
+  border-radius: 40px;
+  size: 30px;
+  background-color: #2f3640;
+  color: white;
 }
-.input_field {
-  padding: 9px;
-  font-size: 15px;
-  padding-left: 15vw;
-  padding-right: 15vw;
+
+.search-box:hover > .search-text {
+  width: 50vw;
+}
+
+.search-text {
+  background-color: #2f3640;
+  border: none;
+  background: none;
+  font-size: 18px;
   text-align: center;
+  color: white;
+  width: 0;
 }
+
 
 .getsaved_button {
-  margin-left: 8px;
+  background:none;
+  border-color: #e84118;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.getsaved_button:hover {
+  background-color: white;
+  color: #2f3640;
 }
 
 
-.app_filtered{
-  
+.filtered-empty-p {
+  background-color: #2f3640;
+  padding: 15px;
+  border-radius: 40px;
+  color: white;
+}
+
+
+.app-filtered{
+  background-color: #2f3640;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-radius: 40px;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-top: 3px double #a1a1a1;
-  width: 80vw;
+  width: 700px;
 }
 
-.app_table {
-  background-color: white;
-  border-collapse: collapse;
+.app-filtered-table {
+  border-collapse:collapse;
+  border:1px solid white;
+  border-radius: 40px;
 }
 
-.app_th {
-  background-color: white;
-  color: black;
+.app-filtered-table-tbody {
+  background-color: #2f3640;
+}
+
+.app-filtered-table-th {
+  background-color: #2f3640;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  font-weight: bold;
   font-weight: normal;
   border-bottom: 1px solid #a1a1a1;
   padding-top: 10px;
+  width: 60vw;
+}
+
+.app-filtered-table-button {
+  background-color: #2f3640;
+  
+}
+
+.app-filtered-table-button:hover {
+  background-color: white;
+  color: #2f3640;
+}
+
+.saved-div {
+  background-color: #2f3640;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  padding: 50px;
+  border-radius: 40px;
+
+}
+
+.saved-h1 {
+  background-color: #2f3640;
+  color: white;
+  border-bottom: 1px double white;
 }
 
 .saved-table {
+  background-color: #2f3640;
   margin-top: 5vh;
   border-collapse: collapse;
-  border-top: 2px double #a1a1a1;
+  border: 2px double #a1a1a1;
+  padding: 10px;
   
 }
 .saved-tbody{
+  background-color: #2f3640;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-top: 3vh;
   align-items: center;
-  
+}
 
+.saved-table-div {
+  background-color: #2f3640;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.saved-tr-buttons {
+  background-color: #2f3640;
+  display: flex;
+  flex-direction: row;
+}
+
+.saved-tr-button {
+  padding: 10px;
+  width: 10vw;
+  margin-left: 5px;
+}
+
+.saved-tr-button:hover {
+  background-color: #a1a1a1;
+  color: black;
+}
+.saved-tr  {
+  background-color: #2f3640;
+  width: 100%;
+}
+#saved-cancelButton {
+  margin-top: 30px;
+  
+}
+#saved-cancelButton:hover {
+  background-color: #a1a1a1;
+  color: black;
 }
 .saved-th {
+  background-color: #2f3640;
   margin-top: 2vh;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #a1a1a1;
   font-weight: normal;
   font-size: 15px;
+  font-weight: bold;
+  color: white;
+  
   
 }
+
+.result {
+  margin-top: 2vh;
+}
+
