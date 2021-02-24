@@ -67,6 +67,8 @@ const  App = () =>  {
       })
     } else {
       SetDisplayType('Saved')
+      SetStockData([])
+      SetStockInfo([])
       console.log('stock already saved')
     }
   }
