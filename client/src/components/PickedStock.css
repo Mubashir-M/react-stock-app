@@ -16,7 +16,11 @@
   justify-content: center;
 }
 .img-item {
-  border-radius: 15px;
+  background-color: white;
+  box-shadow: 5px 5px 5px 2px rgb(0,0,0,0.7),
+             -2px 2px 3px 3px rgb(0,0,0,0.5);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 
@@ -25,13 +29,17 @@
   padding: 30px 50px 30px 50px;
   background-color: #2f3640;
   border-radius: 40px;
+  box-shadow: 5px 5px 5px 2px rgb(0,0,0,0.7),
+             -2px 2px 3px 3px rgb(0,0,0,0.5);
 }
+
 .buttons {
  
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30vw;
+  width: 270px;
+
 }
 
 button {
@@ -39,6 +47,8 @@ button {
   border-radius: 15px;
   background-color: #2f3640;
   color: white;
+  box-shadow: 5px 5px 5px 2px rgb(0,0,0,0.7),
+             -2px -2px 3px 3px rgb(0,0,0,0.5);
 }
 
 .buttons :hover {
@@ -48,31 +58,30 @@ button {
   border-width: 1px;
 }
 
+
+
 .content-table {
   border-collapse: collapse;
   margin: 20px;
   margin: 25px 0;
   font-size: 0.9em;
   min-width: 400px;
+  border-radius: 40px;
+  
+}
+
+.content-table-tbody {
+  border-radius: 40px;
+  box-shadow: 5px 5px 5px 2px rgb(0,0,0,0.7),
+             -2px 2px 3px 3px rgb(0,0,0,0.5);
+             
 }
 
 
 .tr {
   align-items: center;
   background-color: #2f3640;
-  pad: 10px;
-}
-
-#th-first {
-  border-top-left-radius: 40px;
-}
-#td-first {
-  border-top-right-radius: 40px;
-}
-
-
-#tr-last {
-  background-color: #2f3640;
+  padding: 10px;
 }
 
 .th {
@@ -80,6 +89,7 @@ button {
   text-align: center;
   padding: 12px 15px;
   border-bottom: 1px solid #dddddd;
+  
 }
 
 
@@ -90,11 +100,31 @@ button {
   border-bottom: 1px solid #dddddd;
 }
 
-#td-last {
-  border-bottom-right-radius: 40px;
-  border-bottom: none;
+
+#tr-first {
+  border-top-left-radius: 40px;
+  border-radius: 40px;
 }
+#th-first {
+  border-top-left-radius: 40px;
+}
+#td-first {
+  border-top-right-radius: 40px;
+}
+
+
+
+#tr-last {
+  border-bottom-left-radius: 40px;
+}
+
 #th-last {
   border-bottom-left-radius: 40px;
+  border-bottom: none;
+  
+}
+
+#td-last {
+  border-bottom-right-radius: 40px;
   border-bottom: none;
 }

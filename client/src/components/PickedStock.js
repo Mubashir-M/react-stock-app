@@ -49,65 +49,65 @@ const PickedStock =  ({
     <div className = 'container'>
       <div className = 'table-div'>
         <div className='img-div'>
-        <img className='img-item' src = {logo.url} alt ='Company Logo'/>
+          <img className='img-item' src = {logo.url} alt ='Company Logo'/>
         </div>
         <table className = 'content-table'>
-          <tbody>
-        <tr className ='tr'>
-          <th className ='th' id = 'th-first'>Company Name: </th>
-          <td className ='td' id = 'td-first'>{stockInfo.companyName}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Stock: </th>
-          <td className ='td'>{stockInfo.symbol}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Description: </th>
-          <td className ='td'>{stockInfo.description}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Exchange: </th>
-          <td className ='td'>{stockInfo.exchange}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Sector: </th>
-          <td className ='td'>{stockInfo.sector}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Security Name: </th>
-          <td className ='td'>{stockInfo.securityName}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>State: </th>
-          <td className ='td'>{stockInfo.state}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Date: </th>
-          <td className ='td'>{stockData.date}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Close: </th>
-          <td className ='td'>{stockData.close}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>High: </th>
-          <td className ='td'>{stockData.high}</td>
-        </tr>
-        <tr className ='tr'>
-          <th className ='th'>Low: </th>
-          <td className ='td'>{stockData.low}</td>
-        </tr>
-        <tr className ='tr' id = 'tr-last'>
-          <th className ='th' id= 'th-last'>Average: </th>
-          <td className ='td' id = 'td-last'>{stockData.average}</td>
-        </tr>
-        </tbody>
+          <tbody className= 'content-table-tbody'>
+            <tr className ='tr' id = 'tr-first'>
+              <th className ='th' id = 'th-first'>Company Name: </th>
+              <td className ='td' id = 'td-first'>{stockInfo.companyName}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Stock: </th>
+              <td className ='td'>{stockInfo.symbol}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Description: </th>
+              <td className ='td'>{stockInfo.description}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Exchange: </th>
+              <td className ='td'>{stockInfo.exchange}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Sector: </th>
+              <td className ='td'>{stockInfo.sector}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Security Name: </th>
+              <td className ='td'>{stockInfo.securityName}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>State: </th>
+              <td className ='td'>{stockInfo.state}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Date: </th>
+              <td className ='td'>{stockData.date}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Close: </th>
+              <td className ='td'>{stockData.close}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>High: </th>
+              <td className ='td'>{stockData.high}</td>
+            </tr>
+            <tr className ='tr'>
+              <th className ='th'>Low: </th>
+              <td className ='td'>{stockData.low}</td>
+            </tr>
+            <tr className ='tr' id = 'tr-last'>
+              <th className ='th' id= 'th-last'>Average: </th>
+              <td className ='td' id = 'td-last'>{stockData.average}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <div className = 'buttons'>
-            <button onClick = {handleCancel}>Cancel</button>
-            <button value = {chosenStock} onClick={handleSaveStock}>Save</button>
-        </div>  
+          <button onClick = {handleCancel}>Cancel</button>
+          <button value = {chosenStock} onClick={handleSaveStock}>Save</button>
+      </div>  
     </div>
   )
 }

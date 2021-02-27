@@ -100,7 +100,7 @@ const  App = () =>  {
         <table className = 'app-filtered-table'>
           <tbody className = 'app-filtered-table-tbody'>
             {result.map(stock => 
-              <tr>
+              <tr className = 'app-filtered-table-tr'>
                <th className = 'app-filtered-table-th' key = {stock}>{stock} <button className='app-filtered-table-button' onClick = {handleStockPick} value = {stock} >Get</button></th>
                </tr>
               )}
